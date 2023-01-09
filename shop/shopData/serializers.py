@@ -1,4 +1,4 @@
-from rest_framework.serializers import ModelSerializer
+from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
 from .models import Category, Order
 
 
@@ -10,6 +10,7 @@ class CategorySerializer(ModelSerializer):
 
 
 class OrderSerializer(ModelSerializer):
+    category = PrimaryKeyRelatedField(queryset=Category.objects.all())
 
     class Meta:
         model = Order
