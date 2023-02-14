@@ -6,7 +6,7 @@ class CategorySerializer(ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ('name',)
+        fields = '__all__'
 
 
 class OrderSerializer(ModelSerializer):
